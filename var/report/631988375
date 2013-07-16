@@ -1,0 +1,9 @@
+a:5:{i:0;s:204:"Error in file: "D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Captcha\sql\captcha_setup\install-1.7.0.0.0.php" - SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'captcha_log' already exists";i:1;s:972:"#0 D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Core\Model\Resource\Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Core\Model\Resource\Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.7.0.0.0')
+#2 D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.7.0.0.0')
+#3 D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Core\Model\App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 D:\jobs\Sabbre\Minimax\bin\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#6 D:\jobs\Sabbre\Minimax\bin\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#7 D:\jobs\Sabbre\Minimax\bin\index.php(87): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:20:"/sabbre/minimax/bin/";s:11:"script_name";s:29:"/sabbre/minimax/bin/index.php";s:4:"skin";s:7:"default";}

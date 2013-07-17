@@ -140,7 +140,25 @@ input.qty { width:2.5em !important; }
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
 button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
-button.button span { float:left; height:21px; background:transparent url(../images/bkg_button.gif) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
+/* button.button span { float:left; height:21px; background:transparent url(../images/bkg_button.gif) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }*/
+button.button span {
+    overflow: visible;
+    float:left;
+    height:20px;
+    background-color: #858585;
+    padding:0 0 0 8px;
+    font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center;
+    white-space:nowrap; color:#fff;
+ }
+ button.button .red-triangle {
+    display: block;
+    position: relative;
+    height: 12px;
+    width: 5px;
+    left: -5px;
+    top: 10px;
+    background: url("../images/sprite.png") no-repeat scroll -20px -120px transparent;
+ }
 button.button span span { background-position:100% 0; padding:0 12px 0 4px; }
 button.disabled {}
 button.disabled span {}
@@ -316,7 +334,7 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 .sorter .sort-by { float:right; }
 .sorter .link-feed {}
 /* Toolbar */
-.toolbar {}
+.toolbar {margin-right: 30px;}
 .toolbar .pager {}
 .toolbar .sorter {}
 .toolbar-bottom {}
@@ -367,7 +385,8 @@ tr.summary-details-excluded { font-style:italic; }
 .links li.first { padding-left:0 !important; }
 .links li.last { background:none !important; padding-right:0 !important; }
 .link-cart { font-weight:bold; color:#f00; }
-.link-wishlist { font-weight:bold; }
+.link-wishlist {}
+.link-wishlist a {font-family: Arial; text-transform: uppercase; font-size: 14px; color:666;}
 .link-reorder { font-weight:bold; }
 .link-compare { font-weight:bold; }
 .link-print { background:url(../images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px; }
@@ -571,17 +590,66 @@ tr.summary-details-excluded { font-style:italic; }
 .category-products {}
 
 /* View Type: Grid */
-.products-grid { border-bottom:1px solid #ddd; position:relative; }
+
+.products-grid {position:relative;}
 .products-grid.last { border-bottom:0; }
-.products-grid li.item { float:left; width:138px; padding:12px 10px 80px; }
-.products-grid .product-image { display:block; text-align: center; width:100%; height:135px; margin:0 0 10px; }
-.products-grid .product-name { margin:0 0 5px; font-weight:bold; font-size:13px; }
-.products-grid .product-name a {}
-.products-grid .price-box { margin:5px 0; }
+.products-grid li.item { float:left; width:50%; height: 250px;}
+.products-grid li.item .thumbnail {
+    display: block;
+    margin-right: 20px;
+    float: left;
+    width: 180px;
+}
+
+.products-grid li.item .thumbnail img {
+    border: 1px solid #eee;
+
+}
+.products-grid li.item .thumbnail .thumbnail-footer {
+    display: block;
+    overflow: visible;
+    width: 190px;
+    height: 21px;
+}
+
+.products-grid li.item .thumbnail .thumbnail-footer span {
+    display: block;
+    overflow: visible;
+    float:left;
+    height:20px;
+    width: 162px;
+    background-color: #858585;
+    font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center;
+    white-space:nowrap; color:#fff;
+    padding-left: 10px;
+ }
+ .products-grid li.item .thumbnail .thumbnail-footer .red-triangle {
+    display: block;
+    position: relative;
+    height: 12px;
+    width: 5px;
+    left: -5px;
+    top: 10px;
+    background: url("../images/sprite.png") no-repeat scroll -20px -120px transparent;
+ }
+
+.products-grid li.item .details {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.products-grid .product-image {text-align: center; width:100%; height:170px; margin:0; }
+.products-grid .product-name {border-bottom: 1px solid #ccc; margin-bottom: 10px;}
+.products-grid .product-name a {font-family: Arial, Helvetica, sans-serif; font-size:20px; color:#666; border-bottom: 1px solid #eee;}
+.products-grid .price-box { margin:5px 0 10px;}
 .products-grid .availability { line-height:21px; }
-.products-grid .actions { position:absolute; bottom:12px; }
-.col2-left-layout .products-grid,.col2-right-layout .products-grid { width:732px; margin:0 auto; }
+.products-grid .actions {}
+.products-grid .actions button.button {margin-bottom: 10px;}
+.products-grid .add-to-links {margin-bottom: 10px;}
+.col2-left-layout .products-grid,.col2-right-layout .products-grid { width:900px; margin:50px auto; }
 .col1-layout .products-grid { width:790px; margin:0 auto; }
+
 /* View Type: List */
 .products-list li.item { border-bottom:1px solid #ddd; padding:12px 10px; }
 .products-list li.item.last { border-bottom:0; }
@@ -594,7 +662,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-list .desc { clear:both; padding:6px 0 0; margin:0 0 15px; line-height:1.35; }
 .products-list .desc .link-learn { font-size:11px; }
 .products-list .add-to-links { clear:both; }
-.products-list .add-to-links li { display:inline; }
+.products-list .add-to-links li { display:inline;}
 .products-list .add-to-links .separator { display:inline; margin:0 2px; }
 /* ======================================================================================= */
 /* Product View ========================================================================== */
@@ -636,7 +704,7 @@ tr.summary-details-excluded { font-style:italic; }
 .price-box .price { font-weight:bold; }
 /* Regular price */
 .regular-price {}
-.regular-price .price { font-weight:bold; }
+.regular-price .price { font-weight:bold; font-size: 25px; }
 /* Old price */
 .old-price {}
 .old-price .price-label { white-space:nowrap; }
@@ -1157,4 +1225,37 @@ tr.summary-details-excluded { font-style:italic; }
 
 .footer ul.social li.pinterest a{
     background-position: -120px -47px;
+}
+
+/* icons */
+
+.icon {
+    background: url("../images/sprite.png") no-repeat scroll;   
+    background-color: transparent;
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 5px;
+}
+
+.icon.icon-facebook {
+    background-position: -5px -85px;
+}
+
+.icon.icon-twitter {
+    background-position: -36px -85px;
+}
+
+.icon.icon-pinterest {
+    background-position: -67px -85px;
+}
+
+span.title-icon {
+    background: url("../images/sprite.png") no-repeat scroll -5px -120px transparent;
+    display: block;
+    float: left;
+    height: 12px;
+    margin: 6px 6px 0 0;
+    width: 12px;
 }

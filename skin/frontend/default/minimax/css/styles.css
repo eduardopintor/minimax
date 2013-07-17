@@ -393,7 +393,7 @@ tr.summary-details-excluded { font-style:italic; }
     overflow: hidden;    
 }
 .header { 
-    margin: 0 auto;
+    margin-left: 200px;
     overflow: hidden;
     display: table;
     color: #fff;
@@ -446,26 +446,37 @@ tr.summary-details-excluded { font-style:italic; }
 #nav li ul a span { white-space:normal; }
 
 /* 1st Level */
-#nav li { float:left;border-bottom:1px solid #cccccc; }
-#nav li a { float:left; padding:5px 10px;; color:#888; }
+#nav li {border-bottom:1px solid #cccccc; }
+#nav li a {padding:5px 10px;; color:#888; }
 #nav li a:hover { color:#000; }
 #nav li.over a,#nav li.active a { color:#000; }
 
 /* 2nd Level */
-#nav ul,#nav div { position:absolute; width:15em; top:25px; left:-10000px; border:1px solid #ddd; background:#ffffff; }
+#nav ul,#nav div {
+    display:block;width:100%;
+    background:#ffffff;
+    border: none!important;
+}
+
+/* efeito sanfona*/
+#nav ul {height: 0;overflow: hidden;}
+
 #nav div ul { position:static; width:auto; border:none; }
 
 /* 3rd+ leven */
-#nav ul ul,#nav ul div { top:-1px; }
-#nav ul li { float:none; border-bottom:1px solid #ddd; }
+#nav ul ul,#nav ul div { top:-1px;}
+#nav ul li { float:none; border:none;list-style-type: disc; list-style-position: inside;}
+#nav ul li ul li a {
+    margin-left: 20px;
+}
 #nav ul li.last { border-bottom:0; }
-#nav ul li a { float:none; padding:3px 9px; font-weight:normal; color:#888 !important; }
+#nav ul li a { float:none; padding:3px 9px; font-weight:normal; color:#888 !important; text-decoration:  }
 #nav ul li a:hover { color:#000 !important; }
 #nav ul li.active > a,#nav ul li.over > a { color:#000 !important; }
 
 /* Show menu */
 #nav li ul.shown-sub,
-#nav li div.shown-sub { left:0px; z-index:999; }
+#nav li div.shown-sub {left:0px; z-index:999;height: 100%;}
 #nav li .shown-sub ul.shown-sub,
 #nav li .shown-sub li div.shown-sub { left:100px; }
 /********** Navigation > */
@@ -1109,3 +1120,41 @@ tr.summary-details-excluded { font-style:italic; }
     line-height: 0;
 }
 /* ======================================================================================= */
+
+/* footer social */
+
+.footer ul.social {
+    margin: 10px 15px;
+}
+
+.footer ul.social li {
+    height: 32px;
+    width: 32px;
+    margin-right: 5px;
+}
+.footer ul.social li a{
+    background: transparent url(../images/sprite.png) no-repeat;
+    width: 32px;
+    height: 32px;
+    float: left;
+    display: block
+}
+.footer ul.social li a:hover{
+    opacity: 0.75;
+}
+
+.footer ul.social li.facebook a{
+    background-position: -5px -47px;
+}
+
+.footer ul.social li.twitter a{
+    background-position: -42px -47px;
+}
+
+.footer ul.social li.instagram a{
+    background-position: -80px -47px;
+}
+
+.footer ul.social li.pinterest a{
+    background-position: -120px -47px;
+}

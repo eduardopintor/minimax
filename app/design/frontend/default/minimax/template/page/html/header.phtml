@@ -31,9 +31,8 @@
     <div class="header">
         <div class="logo replacement"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><strong><?php echo $this->getLogoAlt() ?></strong>Minimax</a></div>
         <div class="helpful-links">
-	   <p class="welcome-msg"><?php echo $this->getWelcome()?></p>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header-top-links')->toHtml(); ?>
             <?php echo $this->getChildHtml('topLinks') ?>
-            <div class="store-search"><?php echo $this->getChildHtml('topSearch') ?></div>
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
         <?php echo $this->getChildHtml('topContainer'); ?>

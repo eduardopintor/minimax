@@ -30,17 +30,17 @@
 Default layout, loads most of the pages
 -->
 
-    <default>
+<!--     <default>
         <reference name="footer">
             <block type="cms/block" name="cms_footer_links" before="footer_links">
-                <!--
+                
                     The content of this block is taken from the database by its block_id.
                     You can manage it in admin CMS -> Static Blocks
-                -->
+                
                 <action method="setBlockId"><block_id>footer_links</block_id></action>
             </block>
         </reference>
-    </default>
+    </default> -->
     
     <cms_page translate="label">
         <label>CMS Pages (All)</label>

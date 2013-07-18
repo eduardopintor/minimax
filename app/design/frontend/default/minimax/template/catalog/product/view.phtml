@@ -20,7 +20,7 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 
@@ -44,6 +44,7 @@
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
+
         <div class="product-shop">
             <div class="product-name">
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
@@ -70,6 +71,10 @@
                     <?php echo $this->getChildHtml('addto') ?>
                 </div>
                 <?php echo $this->getChildHtml('extra_buttons') ?>
+            <?php elseif (!$_product->isSaleable()): ?>
+                <div class="add-to-box">
+                    <?php echo $this->getChildHtml('addto') ?>
+                </div>
             <?php endif; ?>
 
             <?php if ($_product->getShortDescription()):?>
@@ -129,6 +134,13 @@
                 delete Validation.methods['required-entry'];
                 delete Validation.methods['validate-one-required'];
                 delete Validation.methods['validate-one-required-by-name'];
+                // Remove custom datetime validators
+                for (var methodName in Validation.methods) {
+                    if (methodName.match(/^validate-datetime-.*/i)) {
+                        delete Validation.methods[methodName];
+                    }
+                }
+
                 if (this.validator.validate()) {
                     if (url) {
                         this.form.action = url;

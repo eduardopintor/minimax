@@ -20,7 +20,7 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -31,8 +31,15 @@
         <?php if(!$_product->isGrouped()): ?>
         <label for="qty"><?php echo $this->__('Qty:') ?></label>
         <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+		<div class="styled">
+			<select name="qtys" id="qty">
+				<?php for ($i=1; $i < 11; $i++) { ?> 
+					<option value="<?php echo $i ?>" <?php $qtydefault = $this->getProductDefaultQty() * 1; if ($i == $qtydefault) {echo 'selected="selected"';}; ?> ><?php echo $i ?></option>
+				<? }; ?>	
+			</select>
+		</div>
         <?php endif; ?>
-        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span><span class="red-triangle"></span></button>
         <?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>

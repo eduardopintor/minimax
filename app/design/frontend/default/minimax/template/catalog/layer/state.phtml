@@ -34,15 +34,15 @@
 <?php $_filters = $this->getActiveFilters() ?>
 <?php if(!empty($_filters)): ?>
 <div class="currently">
-    <p class="block-subtitle"><?php echo $this->__('Currently Shopping by:') ?></p>
+    <p class="block-subtitle nav-item"><?php echo $this->__('Currently Shopping by:') ?></p>
     <ol>
     <?php foreach ($_filters as $_filter): ?>
-        <li>
+        <li class="nav-item">
             <a href="<?php echo $_filter->getRemoveUrl() ?>" title="<?php echo $this->__('Remove This Item') ?>" class="btn-remove"><?php echo $this->__('Remove This Item') ?></a>
-            <span class="label"><?php echo $this->__($_filter->getName()) ?>:</span> <?php echo $this->stripTags($_filter->getLabel()) ?>
+            <span class="label"><?php echo $this->__($_filter->getName()) ?>:</span><br><?php echo $this->stripTags($_filter->getLabel()) ?>
         </li>
     <?php endforeach; ?>
     </ol>
-    <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+    <div class="actions pull-right"><a class="clear-all" href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
 </div>
 <?php endif; ?>

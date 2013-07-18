@@ -33,18 +33,18 @@
 ?>
 <?php if($this->canShowBlock()): ?>
 <div class="block block-layered-nav">
-    <div class="block-title">
+    <div class="block-title nav-item">
         <strong><span><?php echo $this->__('Shop By') ?></span></strong>
     </div>
     <div class="block-content">
         <?php echo $this->getStateHtml() ?>
         <?php if($this->canShowOptions()): ?>
-            <p class="block-subtitle"><?php echo $this->__('Shopping Options') ?></p>
-            <dl id="narrow-by-list">
+            <p class="block-subtitle nav-item"><?php echo $this->__('Shopping Options') ?></p>
+            <dl id="narrow-by-list nav-item">
                 <?php $_filters = $this->getFilters() ?>
                 <?php foreach ($_filters as $_filter): ?>
                 <?php if($_filter->getItemsCount()): ?>
-                    <dt><?php echo $this->__($_filter->getName()) ?></dt>
+                    <dt class="nav-item"><?php echo $this->__($_filter->getName()) ?></dt>
                     <dd><?php echo $_filter->getHtml() ?></dd>
                 <?php endif; ?>
                 <?php endforeach; ?>

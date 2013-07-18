@@ -95,7 +95,7 @@
                 <div class="thumbnail">
                     <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(170); ?>" width="170" height="170" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
                         <div class="thumbnail-footer">
-                            <span>CAMISA.REF.78</span>
+                            <span><?php echo $this->stripTags($_product->getName(), null, true) ?></span>
                             <span class="red-triangle"></span>
                         </div>
                     </a>

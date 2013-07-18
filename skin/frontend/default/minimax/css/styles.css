@@ -466,7 +466,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* 1st Level */
 #nav li {border-bottom:1px solid #cccccc; }
-#nav li a {padding:5px 10px;; color:#888; }
+#nav li a {padding:6px 10px 3px 0; color:#888; }
 #nav li a:hover { color:#000; }
 #nav li.over a,#nav li.active a { color:#000; }
 
@@ -527,9 +527,28 @@ tr.summary-details-excluded { font-style:italic; }
 .block-currency {}
 .block-currency select { width:100%; border:1px solid #888; }
 /* Block: Layered Navigation */
-.block-layered-nav {}
+.block-layered-nav {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+}
+.block-layered-nav dt,
+.block-layered-nav .clear-all,
+.block-layered-nav .block-title {
+    color: #666;
+}
+
+.block-layered-nav ol li a, .block-layered-nav .count {
+    color: #999;
+}
+
+.block-layered-nav ol li a:hover {
+    color: #000;
+}
+
 .block-layered-nav dt { font-weight:bold; }
-.block-layered-nav .currently {}
+.block-layered-nav .currently {
+
+}
 .block-layered-nav .btn-remove { float:left; margin:2px 3px 0 0; }
 /* Block: Cart */
 .block-cart {}
@@ -1258,4 +1277,13 @@ span.title-icon {
     height: 12px;
     margin: 6px 6px 0 0;
     width: 12px;
+}
+.nav-item {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding: 6px 10px 3px 20px;
+}
+
+.pull-right {
+    float: right;
 }
